@@ -42,13 +42,11 @@ form{
   }
   #soundboardLeft{
     background: peachPuff;
-    height: 550px;
     width: 550px;
     width: 70%;
   }
   #soundboardRight{
     background: dodgerBlue;
-    height: 550px;
     width: 30%;
   }
   #soundboardImage{
