@@ -9,107 +9,126 @@ const soundList = [
   },
   {
     "audio": "https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3",
-    "name": "Heater-2"
+    "name": "Heater-2",
+    "img": "https://i.imgur.com/hdASdS7.jpg"
   },
   {
     "audio": "https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3",
-    "name": "Heater-3"
+    "name": "Heater-3",
+    "img": "https://i.imgur.com/hdASdS7.jpg"
   },
   {
     "audio": "https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3",
-    "name": "Heater-4"
+    "name": "Heater-4",
+    "img": "https://i.imgur.com/hdASdS7.jpg"
   },
   {
     "audio": "https://s3.amazonaws.com/freecodecamp/drums/Dry_Ohh.mp3",
-    "name": "Clap"
+    "name": "Clap",
+    "img": "https://i.imgur.com/hdASdS7.jpg"
   },
   {
     "audio": "https://s3.amazonaws.com/freecodecamp/drums/Bld_H1.mp3",
-    "name": "Open-HH"
+    "name": "Open-HH",
+    "img": "https://i.imgur.com/hdASdS7.jpg"
   },
   {
     "audio": "https://s3.amazonaws.com/freecodecamp/drums/punchy_kick_1.mp3",
-    "name": "Kick-n'-Hat"
+    "name": "Kick-n'-Hat",
+    "img": "https://i.imgur.com/hdASdS7.jpg"
   },
   {
     "audio": "https://s3.amazonaws.com/freecodecamp/drums/side_stick_1.mp3",
-    "name": "Kick"
+    "name": "Kick",
+    "img": "https://i.imgur.com/hdASdS7.jpg"
   },
   {
     "audio": "https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3",
-    "name": "Closed-HH"
+    "name": "Closed-HH",
+    "img": "https://i.imgur.com/hdASdS7.jpg"
   },
   {
     "audio": "https://s3.amazonaws.com/freecodecamp/drums/Chord_1.mp3",
-    "name": "Chord-1"
+    "name": "Chord-1",
+    "img": "https://i.imgur.com/hdASdS7.jpg"
   },
   {
     "audio": "https://s3.amazonaws.com/freecodecamp/drums/Chord_2.mp3",
-    "name": "Chord-2"
+    "name": "Chord-2",
+    "img": "https://i.imgur.com/hdASdS7.jpg"
   },
   {
     "audio": "https://s3.amazonaws.com/freecodecamp/drums/Chord_3.mp3",
-    "name": "Chord-3"
+    "name": "Chord-3",
+    "img": "https://i.imgur.com/hdASdS7.jpg"
   },
   {
     "audio": "https://s3.amazonaws.com/freecodecamp/drums/Give_us_a_light.mp3",
-    "name": "Shaker"
+    "name": "Shaker",
+    "img": "https://i.imgur.com/hdASdS7.jpg"
   },
   {
     "audio": "https://s3.amazonaws.com/freecodecamp/drums/Dry_Ohh.mp3",
-    "name": "Open-HH"
+    "name": "Open-HH",
+    "img": "https://i.imgur.com/hdASdS7.jpg"
   },
   {
     "audio": "https://s3.amazonaws.com/freecodecamp/drums/Bld_H1.mp3",
-    "name": "Closed-HH"
+    "name": "Closed-HH",
+    "img": "https://i.imgur.com/hdASdS7.jpg"
   },
   {
     "audio": "https://s3.amazonaws.com/freecodecamp/drums/punchy_kick_1.mp3",
-    "name": "Punchy-Kick"
+    "name": "Punchy-Kick",
+    "img": "https://i.imgur.com/hdASdS7.jpg"
   },
   {
     "audio": "https://s3.amazonaws.com/freecodecamp/drums/side_stick_1.mp3",
-    "name": "Side-Stick"
+    "name": "Side-Stick",
+    "img": "https://i.imgur.com/hdASdS7.jpg"
   },
   {
     "audio": "https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3",
-    "name": "Snare"
+    "name": "Snare",
+    "img": "https://i.imgur.com/hdASdS7.jpg"
   }
 ]; 
 
+//define component called 'soundboardElement', which is forms each clickable square, and also uses innerHTML to update the image and name in the appropriate elements on the right hand side
 class SoundboardElement extends React.Component{
   constructor(props){
     super(props)
+//bind the handleClick method
     this.handleClick = this.handleClick.bind(this);
   }
-  handleClick(props){
-    console.log(props.name);
-      new Audio(soundList[0].audio).play();
-    document.getElementById("soundboardImage").innerHTML = "Paragraph changed!"; 
-    document.getElementById("soundboardName").innerHTML = soundList[0].name; 
+//handleClick method takes props as 'audioDetail.
+  handleClick(audioDetail){
+      new Audio(soundList[audioDetail.name].audio).play();
+    document.getElementById("soundboardImage").innerHTML = soundList[audioDetail.name].img; 
+    document.getElementById("soundboardName").innerHTML = soundList[audioDetail.name].name; 
+  
+    
   }
   render(){
     const props = this.props;
     return(
-      <div className="soundboardElement" onClick={this.handleClick}>
+//When clicked, calls the handleClick method. 'this.handleClick.bind(this, props)' is needed to pass the props to the handleClick method. 'this.handleClick(props)' would be incorrect and cause an error, as it would be immediately called. 
+      <div className="soundboardElement" onClick={this.handleClick.bind(this, props)}>
         <p>{(this.props.name)}</p>
       </div>
     );
   }
 }
 
+//define component called 'soundboard', which calls child components for each clickable element. Element is similar, with different audio, name, and image in each case.
 class Soundboard extends React.Component{
   constructor(props){
     super(props)
   }
   render(){
-    const test = "test";
- 
     return(
       <div>
-
-        <SoundboardElement audio={"https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"} name={"Heater-1"}/>
-        
+        <SoundboardElement name={0}/>
         <SoundboardElement name={1}/>
         <SoundboardElement name={2}/>
         <SoundboardElement name={3}/>
@@ -123,6 +142,7 @@ class Soundboard extends React.Component{
   }
 }
 
+//render the soundboard element to the DOM
 ReactDOM.render(<Soundboard />, document.getElementById('soundboardLeft')); */
 "use strict";
 
@@ -153,56 +173,73 @@ var soundList = [{
   "img": "https://i.imgur.com/hdASdS7.jpg"
 }, {
   "audio": "https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3",
-  "name": "Heater-2"
+  "name": "Heater-2",
+  "img": "https://i.imgur.com/hdASdS7.jpg"
 }, {
   "audio": "https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3",
-  "name": "Heater-3"
+  "name": "Heater-3",
+  "img": "https://i.imgur.com/hdASdS7.jpg"
 }, {
   "audio": "https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3",
-  "name": "Heater-4"
+  "name": "Heater-4",
+  "img": "https://i.imgur.com/hdASdS7.jpg"
 }, {
   "audio": "https://s3.amazonaws.com/freecodecamp/drums/Dry_Ohh.mp3",
-  "name": "Clap"
+  "name": "Clap",
+  "img": "https://i.imgur.com/hdASdS7.jpg"
 }, {
   "audio": "https://s3.amazonaws.com/freecodecamp/drums/Bld_H1.mp3",
-  "name": "Open-HH"
+  "name": "Open-HH",
+  "img": "https://i.imgur.com/hdASdS7.jpg"
 }, {
   "audio": "https://s3.amazonaws.com/freecodecamp/drums/punchy_kick_1.mp3",
-  "name": "Kick-n'-Hat"
+  "name": "Kick-n'-Hat",
+  "img": "https://i.imgur.com/hdASdS7.jpg"
 }, {
   "audio": "https://s3.amazonaws.com/freecodecamp/drums/side_stick_1.mp3",
-  "name": "Kick"
+  "name": "Kick",
+  "img": "https://i.imgur.com/hdASdS7.jpg"
 }, {
   "audio": "https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3",
-  "name": "Closed-HH"
+  "name": "Closed-HH",
+  "img": "https://i.imgur.com/hdASdS7.jpg"
 }, {
   "audio": "https://s3.amazonaws.com/freecodecamp/drums/Chord_1.mp3",
-  "name": "Chord-1"
+  "name": "Chord-1",
+  "img": "https://i.imgur.com/hdASdS7.jpg"
 }, {
   "audio": "https://s3.amazonaws.com/freecodecamp/drums/Chord_2.mp3",
-  "name": "Chord-2"
+  "name": "Chord-2",
+  "img": "https://i.imgur.com/hdASdS7.jpg"
 }, {
   "audio": "https://s3.amazonaws.com/freecodecamp/drums/Chord_3.mp3",
-  "name": "Chord-3"
+  "name": "Chord-3",
+  "img": "https://i.imgur.com/hdASdS7.jpg"
 }, {
   "audio": "https://s3.amazonaws.com/freecodecamp/drums/Give_us_a_light.mp3",
-  "name": "Shaker"
+  "name": "Shaker",
+  "img": "https://i.imgur.com/hdASdS7.jpg"
 }, {
   "audio": "https://s3.amazonaws.com/freecodecamp/drums/Dry_Ohh.mp3",
-  "name": "Open-HH"
+  "name": "Open-HH",
+  "img": "https://i.imgur.com/hdASdS7.jpg"
 }, {
   "audio": "https://s3.amazonaws.com/freecodecamp/drums/Bld_H1.mp3",
-  "name": "Closed-HH"
+  "name": "Closed-HH",
+  "img": "https://i.imgur.com/hdASdS7.jpg"
 }, {
   "audio": "https://s3.amazonaws.com/freecodecamp/drums/punchy_kick_1.mp3",
-  "name": "Punchy-Kick"
+  "name": "Punchy-Kick",
+  "img": "https://i.imgur.com/hdASdS7.jpg"
 }, {
   "audio": "https://s3.amazonaws.com/freecodecamp/drums/side_stick_1.mp3",
-  "name": "Side-Stick"
+  "name": "Side-Stick",
+  "img": "https://i.imgur.com/hdASdS7.jpg"
 }, {
   "audio": "https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3",
-  "name": "Snare"
-}];
+  "name": "Snare",
+  "img": "https://i.imgur.com/hdASdS7.jpg"
+}]; //define component called 'soundboardElement', which is forms each clickable square, and also uses innerHTML to update the image and name in the appropriate elements on the right hand side
 
 var SoundboardElement =
 /*#__PURE__*/
@@ -214,32 +251,36 @@ function (_React$Component) {
 
     _classCallCheck(this, SoundboardElement);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(SoundboardElement).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(SoundboardElement).call(this, props)); //bind the handleClick method
+
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     return _this;
-  }
+  } //handleClick method takes props as 'audioDetail.
+
 
   _createClass(SoundboardElement, [{
     key: "handleClick",
-    value: function handleClick(props) {
-      console.log(props.name);
-      new Audio(soundList[0].audio).play();
-      document.getElementById("soundboardImage").innerHTML = "Paragraph changed!";
-      document.getElementById("soundboardName").innerHTML = soundList[0].name;
+    value: function handleClick(audioDetail) {
+      new Audio(soundList[audioDetail.name].audio).play();
+      document.getElementById("soundboardImage").innerHTML = soundList[audioDetail.name].img;
+      document.getElementById("soundboardName").innerHTML = soundList[audioDetail.name].name;
     }
   }, {
     key: "render",
     value: function render() {
       var props = this.props;
-      return React.createElement("div", {
-        className: "soundboardElement",
-        onClick: this.handleClick
-      }, React.createElement("p", null, this.props.name));
+      return (//When clicked, calls the handleClick method. 'this.handleClick.bind(this, props)' is needed to pass the props to the handleClick method. 'this.handleClick(props)' would be incorrect and cause an error, as it would be immediately called. 
+        React.createElement("div", {
+          className: "soundboardElement",
+          onClick: this.handleClick.bind(this, props)
+        }, React.createElement("p", null, this.props.name))
+      );
     }
   }]);
 
   return SoundboardElement;
-}(React.Component);
+}(React.Component); //define component called 'soundboard', which calls child components for each clickable element. Element is similar, with different audio, name, and image in each case.
+
 
 var Soundboard =
 /*#__PURE__*/
@@ -255,10 +296,8 @@ function (_React$Component2) {
   _createClass(Soundboard, [{
     key: "render",
     value: function render() {
-      var test = "test";
       return React.createElement("div", null, React.createElement(SoundboardElement, {
-        audio: "https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3",
-        name: "Heater-1"
+        name: 0
       }), React.createElement(SoundboardElement, {
         name: 1
       }), React.createElement(SoundboardElement, {
@@ -280,6 +319,7 @@ function (_React$Component2) {
   }]);
 
   return Soundboard;
-}(React.Component);
+}(React.Component); //render the soundboard element to the DOM
+
 
 ReactDOM.render(React.createElement(Soundboard, null), document.getElementById('soundboardLeft'));

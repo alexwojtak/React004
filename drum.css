@@ -27,8 +27,7 @@ form{
 #container{
     background-color: #333333;
     opacity: 85%;
-    width : 50%;
-    max-width: 400px;
+    width : 100%;
     margin: auto;
     border: 9px solid #000000;
     border-radius: 5px;
@@ -44,6 +43,7 @@ form{
   #soundboardLeft{
     background: peachPuff;
     height: 550px;
+    width: 550px;
     width: 70%;
   }
   #soundboardRight{
