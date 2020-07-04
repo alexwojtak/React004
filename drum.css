@@ -10,14 +10,24 @@ form{
     text-align: center;
     margin-bottom: 10%;
 }
+h1{
+    text-align: center;
+  }
 .soundboardElement{
     background: goldenRod;
+    background-size: cover;
     display: inline-block;
     margin:20px;
     height: 150px;
     width: 150px;
     cursor: pointer;
+    border: 1px solid #000000;
   }
+.soundboardElementText{
+    margin-top: 80%;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
 #title{
     text-align: center;
 }
@@ -42,18 +52,23 @@ form{
   }
   #soundboardLeft{
     background: peachPuff;
+
+    background-image: url('cork.jpg');
     width: 550px;
     width: 70%;
   }
-  #soundboardRight{
+#soundboardRight{
     background: dodgerBlue;
+    background-image: url('paper.jpg');
     width: 30%;
+    min-width: 250px;
   }
-  #soundboardImage{
+#soundboardImage{
     margin: 30px;
     height: 250px;
   }
-  #soundboardName{
+#soundboardName{
     margin: 30px;
     height: 120px;
+    color: #000000;
   }
