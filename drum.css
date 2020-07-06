@@ -1,8 +1,7 @@
 body{
     position: relative;
-    background-image: url("../../wallpaper.jpg");
+    background-image: url("http://www.alexwojtak.com/wallpaper.jpg");
     background-size: cover;
-    background-color: #333333;
     font-family:  Century Gothic, CenturyGothic, AppleGothic, sans-serif;
     color: #FFFFFF;
 }
@@ -14,7 +13,6 @@ h1{
     text-align: center;
   }
 .soundboardElement{
-    background: goldenRod;
     background-size: cover;
     display: inline-block;
     margin:20px;
@@ -29,18 +27,16 @@ h1{
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 #title{
+    color: #000000;
     text-align: center;
 }
 #description{
+    color: #000000;
     text-align: center;
 }
 #container{
-    background-color: #333333;
-    opacity: 85%;
     width : 100%;
     margin: auto;
-    border: 9px solid #000000;
-    border-radius: 5px;
     font-size: 1.3vw;
 	font-weight: 100;
 }
@@ -49,10 +45,9 @@ h1{
     margin: 0 auto;
     text-align: center;
     display: flex;
+    border: 12px solid #966F33;
   }
   #soundboardLeft{
-    background: peachPuff;
-
     background-image: url('cork.jpg');
     width: 550px;
     width: 70%;
