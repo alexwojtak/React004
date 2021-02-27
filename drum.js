@@ -3,58 +3,58 @@ Untranspiled Code
 // Full list of sounds. For each sound, there is 'audio', which has the sound file location, 'name', which is the name of the sound, and 'img', which is the image associated with the sound.
 const soundList = [
   {
-    "audio": "http://www.alexwojtak.com/projects/react4/annie.mp3",
+    "audio": "annie.mp3",
     "name": "Annie Edison",
-    "img": "http://www.alexwojtak.com/projects/react4/annie1.jpg",
-    "img2": "http://www.alexwojtak.com/projects/react4/annie2.jpg"
+    "img": "annie1.jpg",
+    "img2": "annie2.jpg"
   },
   {
-    "audio": "http://www.alexwojtak.com/projects/react4/jeff.mp3",
+    "audio": "jeff.mp3",
     "name": "Jeff Winger",
-    "img": "http://www.alexwojtak.com/projects/react4/jeff1.jpg",
-    "img2": "http://www.alexwojtak.com/projects/react4/jeff2.jpg"
+    "img": "jeff1.jpg",
+    "img2": "jeff2.jpg"
   },
   {
-    "audio": "http://www.alexwojtak.com/projects/react4/britta.mp3",
+    "audio": "britta.mp3",
     "name": "Britta Perry",
-    "img": "http://www.alexwojtak.com/projects/react4/britta1.jpg",
-    "img2": "http://www.alexwojtak.com/projects/react4/britta2.jpg"
+    "img": "britta1.jpg",
+    "img2": "britta2.jpg"
   },
   {
-    "audio": "http://www.alexwojtak.com/projects/react4/troy.mp3",
+    "audio": "troy.mp3",
     "name": "Troy Barnes",
-    "img": "http://www.alexwojtak.com/projects/react4/troy1.jpg",
-    "img2": "http://www.alexwojtak.com/projects/react4/troy2.jpg"
+    "img": "troy1.jpg",
+    "img2": "troy2.jpg"
   },
   {
-    "audio": "http://www.alexwojtak.com/projects/react4/magnitude.mp3",
+    "audio": "magnitude.mp3",
     "name": "Magnitude",
-    "img": "http://www.alexwojtak.com/projects/react4/magnitude1.jpg",
-    "img2": "http://www.alexwojtak.com/projects/react4/magnitude2.jpg"
+    "img": "magnitude1.jpg",
+    "img2": "magnitude2.jpg"
   },
   {
-    "audio": "http://www.alexwojtak.com/projects/react4/abed.mp3",
+    "audio": "abed.mp3",
     "name": "Abed Nadir",
-    "img": "http://www.alexwojtak.com/projects/react4/abed1.jpg",
-    "img2": "http://www.alexwojtak.com/projects/react4/abed2.jpg"
+    "img": "abed1.jpg",
+    "img2": "abed2.jpg"
   },
   {
-    "audio": "http://www.alexwojtak.com/projects/react4/dean.mp3",
+    "audio": "dean.mp3",
     "name": "Dean Pelton",
-    "img": "http://www.alexwojtak.com/projects/react4/dean1.jpg",
-    "img2": "http://www.alexwojtak.com/projects/react4/dean2.jpg"
+    "img": "dean1.jpg",
+    "img2": "dean2.jpg"
   },
   {
-    "audio": "http://www.alexwojtak.com/projects/react4/shirley.mp3",
+    "audio": "shirley.mp3",
     "name": "Shirley Bennet",
-    "img": "http://www.alexwojtak.com/projects/react4/shirley1.jpg",
-    "img2": "http://www.alexwojtak.com/projects/react4/shirley2.jpg"
+    "img": "shirley1.jpg",
+    "img2": "shirley2.jpg"
   },
   {
-    "audio": "http://www.alexwojtak.com/projects/react4/chang.mp3",
+    "audio": "chang.mp3",
     "name": "Ben Chang",
-    "img": "http://www.alexwojtak.com/projects/react4/chang1.jpg",
-    "img2": "http://www.alexwojtak.com/projects/react4/chang2.jpg"
+    "img": "chang1.jpg",
+    "img2": "chang2.jpg"
   }
 ]; 
 
@@ -75,7 +75,7 @@ class SoundboardElement extends React.Component{
   }
   render(){
     const props = this.props;
-    const Background = "http://www.alexwojtak.com/projects/react4/chang1.jpg";
+    const Background = "chang1.jpg";
     return(
 //When clicked, calls the handleClick method. 'this.handleClick.bind(this, props)' is needed to pass the props to the handleClick method. 'this.handleClick(props)' would be incorrect and cause an error, as it would be immediately called. 
       <div className="soundboardElement" onClick={this.handleClick.bind(this, props)} style={{backgroundImage: "url(" + soundList[this.props.name].img + ")"}}>
@@ -133,50 +133,50 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 // Full list of sounds. For each sound, there is 'audio', which has the sound file location, 'name', which is the name of the sound, and 'img', which is the image associated with the sound.
 var soundList = [{
-  "audio": "http://www.alexwojtak.com/projects/react4/annie.mp3",
+  "audio": "annie.mp3",
   "name": "Annie Edison",
-  "img": "http://www.alexwojtak.com/projects/react4/annie1.jpg",
-  "img2": "http://www.alexwojtak.com/projects/react4/annie2.jpg"
+  "img": "annie1.jpg",
+  "img2": "annie2.jpg"
 }, {
-  "audio": "http://www.alexwojtak.com/projects/react4/jeff.mp3",
+  "audio": "jeff.mp3",
   "name": "Jeff Winger",
-  "img": "http://www.alexwojtak.com/projects/react4/jeff1.jpg",
-  "img2": "http://www.alexwojtak.com/projects/react4/jeff2.jpg"
+  "img": "jeff1.jpg",
+  "img2": "jeff2.jpg"
 }, {
-  "audio": "http://www.alexwojtak.com/projects/react4/britta.mp3",
+  "audio": "britta.mp3",
   "name": "Britta Perry",
-  "img": "http://www.alexwojtak.com/projects/react4/britta1.jpg",
-  "img2": "http://www.alexwojtak.com/projects/react4/britta2.jpg"
+  "img": "britta1.jpg",
+  "img2": "britta2.jpg"
 }, {
-  "audio": "http://www.alexwojtak.com/projects/react4/troy.mp3",
+  "audio": "troy.mp3",
   "name": "Troy Barnes",
-  "img": "http://www.alexwojtak.com/projects/react4/troy1.jpg",
-  "img2": "http://www.alexwojtak.com/projects/react4/troy2.jpg"
+  "img": "troy1.jpg",
+  "img2": "troy2.jpg"
 }, {
-  "audio": "http://www.alexwojtak.com/projects/react4/magnitude.mp3",
+  "audio": "magnitude.mp3",
   "name": "Magnitude",
-  "img": "http://www.alexwojtak.com/projects/react4/magnitude1.jpg",
-  "img2": "http://www.alexwojtak.com/projects/react4/magnitude2.jpg"
+  "img": "magnitude1.jpg",
+  "img2": "magnitude2.jpg"
 }, {
-  "audio": "http://www.alexwojtak.com/projects/react4/abed.mp3",
+  "audio": "abed.mp3",
   "name": "Abed Nadir",
-  "img": "http://www.alexwojtak.com/projects/react4/abed1.jpg",
-  "img2": "http://www.alexwojtak.com/projects/react4/abed2.jpg"
+  "img": "abed1.jpg",
+  "img2": "abed2.jpg"
 }, {
-  "audio": "http://www.alexwojtak.com/projects/react4/dean.mp3",
+  "audio": "dean.mp3",
   "name": "Dean Pelton",
-  "img": "http://www.alexwojtak.com/projects/react4/dean1.jpg",
-  "img2": "http://www.alexwojtak.com/projects/react4/dean2.jpg"
+  "img": "dean1.jpg",
+  "img2": "dean2.jpg"
 }, {
-  "audio": "http://www.alexwojtak.com/projects/react4/shirley.mp3",
+  "audio": "shirley.mp3",
   "name": "Shirley Bennet",
-  "img": "http://www.alexwojtak.com/projects/react4/shirley1.jpg",
-  "img2": "http://www.alexwojtak.com/projects/react4/shirley2.jpg"
+  "img": "shirley1.jpg",
+  "img2": "shirley2.jpg"
 }, {
-  "audio": "http://www.alexwojtak.com/projects/react4/chang.mp3",
+  "audio": "chang.mp3",
   "name": "Ben Chang",
-  "img": "http://www.alexwojtak.com/projects/react4/chang1.jpg",
-  "img2": "http://www.alexwojtak.com/projects/react4/chang2.jpg"
+  "img": "chang1.jpg",
+  "img2": "chang2.jpg"
 }]; //define component called 'soundboardElement', which is forms each clickable square, and also uses innerHTML to update the image and name in the appropriate elements on the right hand side
 
 var SoundboardElement =
@@ -207,7 +207,7 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var props = this.props;
-      var Background = "http://www.alexwojtak.com/projects/react4/chang1.jpg";
+      var Background = "chang1.jpg";
       return (//When clicked, calls the handleClick method. 'this.handleClick.bind(this, props)' is needed to pass the props to the handleClick method. 'this.handleClick(props)' would be incorrect and cause an error, as it would be immediately called. 
         React.createElement("div", {
           className: "soundboardElement",
